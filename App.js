@@ -1,15 +1,14 @@
 import React from "react";
-import { View, StatusBar, SafeAreaView } from "react-native";
+import { View, StatusBar, SafeAreaView, ScrollView } from "react-native";
 import HomeScreen from "./src/screens/Home";
-import Post from "./src/components/Post";
+import SearchResult from "./src/screens/searchResult";
 
 export default function App() {
   return (
     <View>
       <StatusBar style="auto" />
-      {/*<SafeAreaView></SafeAreaView>*/}
-      <Post />
-      {/*<HomeScreen />*/}
+
+      <SearchResult />
     </View>
   );
 }

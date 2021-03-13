@@ -8,7 +8,7 @@ const Styles = StyleSheet.create({
     width: "100%",
     aspectRatio: 3 / 2,
     resizeMode: "cover",
-    borderRadius: 20,
+    borderRadius: 10,
   },
   bedrooms: {
     marginVertical: 10,
