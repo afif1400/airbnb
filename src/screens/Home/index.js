@@ -2,8 +2,10 @@ import React from "react";
 import { View, Text, Pressable, ImageBackground } from "react-native";
 import styles from "./styles";
 import Fontisto from "react-native-vector-icons/Fontisto";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <View>
       <ImageBackground
@@ -12,7 +14,7 @@ const HomeScreen = () => {
       >
         <Pressable
           style={styles.searchButton}
-          onPress={() => console.warn("search button clicked")}
+          onPress={() => navigation.navigate("Destination Search")}
         >
           <Fontisto name="search" size={25} color="#f15454" />
           <Text style={styles.searchButtonText}> where are you going? </Text>
@@ -20,7 +22,7 @@ const HomeScreen = () => {
         <Text style={styles.title}>Go Near</Text>
         <Pressable
           style={styles.button}
-          onPress={() => console.warn("Explore button")}
+          onPress={() => navigation.navigate("Search")}
         >
           <Text style={styles.buttonText}>Explore nearby stays </Text>
         </Pressable>

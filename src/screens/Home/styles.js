@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 30,
     marginHorizontal: 10,
-    marginTop: -70,
+    marginTop: -20,
     marginBottom: 50,
     flexDirection: "row",
     justifyContent: "center",

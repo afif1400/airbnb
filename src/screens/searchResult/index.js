@@ -14,7 +14,6 @@ const SearchResult = () => {
       {/*  })}*/}
       {/*</ScrollView>*/}
       <FlatList data={feed} renderItem={({ item }) => <Post post={item} />} />
-      <Text>Search Result</Text>
     </View>
   );
 };
