@@ -1,6 +1,7 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import SearchResult from "../screens/searchResult";
+import SearchResultsMap from "../screens/SearchResultsMap";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -15,7 +16,7 @@ const SearchResultsTabNavigation = () => {
       }}
     >
       <Tab.Screen name={"list"} component={SearchResult} />
-      <Tab.Screen name={"map"} component={SearchResult} />
+      <Tab.Screen name={"map"} component={SearchResultsMap} />
     </Tab.Navigator>
   );
 };
