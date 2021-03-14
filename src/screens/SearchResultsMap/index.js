@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, FlatList, useWindowDimensions } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import places from "../../../assets/data/feed";
 import CustomMarker from "../../components/CustomMarker";
@@ -7,6 +7,8 @@ import PostCarouselItem from "../../components/PostCarouselItem";
 
 const SearchResultsMap = () => {
   const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+  const windowWidth = useWindowDimensions().width;
+
   return (
     <View style={{ width: "100%", height: "100%" }}>
       <MapView
@@ -29,7 +31,14 @@ const SearchResultsMap = () => {
         ))}
       </MapView>
       <View style={{ position: "absolute", bottom: 40 }}>
-        <PostCarouselItem post={places[0]} />
+        <FlatList
+          data={places}
+          renderItem={({ item }) => <PostCarouselItem post={item} />}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          snapToInterval={windowWidth - 60}
+          snapToAlignment={"center"}
+        />
       </View>
     </View>
   );
