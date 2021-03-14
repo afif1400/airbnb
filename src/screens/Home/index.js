@@ -20,10 +20,7 @@ const HomeScreen = () => {
           <Text style={styles.searchButtonText}> where are you going? </Text>
         </Pressable>
         <Text style={styles.title}>Go Near</Text>
-        <Pressable
-          style={styles.button}
-          onPress={() => navigation.navigate("Search")}
-        >
+        <Pressable style={styles.button}>
           <Text style={styles.buttonText}>Explore nearby stays </Text>
         </Pressable>
       </ImageBackground>
