@@ -6,5 +6,28 @@
       "dependsOn": [],
       "customAuth": false
     }
+  },
+  "api": {
+    "airbnb": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "description": "",
+              "apiKey": "da2-vrmxmb77kba2bkjz7jhf7xic2i"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
+        }
+      }
+    }
   }
 }
