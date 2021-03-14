@@ -5,10 +5,14 @@ import Amplify from "aws-amplify";
 import config from "./aws-exports";
 Amplify.configure(config);
 
-export default function App() {
+import { withAuthenticator } from "aws-amplify-react-native";
+
+function App() {
   return (
     <>
       <Router />
     </>
   );
 }
+
+export default withAuthenticator(App);
