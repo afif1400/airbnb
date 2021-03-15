@@ -87,6 +87,9 @@ const GuestScreen = () => {
               screen: "Explore",
               params: {
                 screen: "SearchResults",
+                params: {
+                  guests: adults + children,
+                },
               },
             })
           }

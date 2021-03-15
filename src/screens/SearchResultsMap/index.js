@@ -6,7 +6,7 @@ import PostCarouselItem from "../../components/PostCarouselItem";
 import { API, graphqlOperation } from "aws-amplify";
 import { listPosts } from "../../graphql/queries";
 
-const SearchResultsMap = () => {
+const SearchResultsMap = ({ guests }) => {
   const [selectedPlaceId, setSelectedPlaceId] = useState(null);
   const [posts, setPosts] = useState([]);
 
@@ -24,14 +24,20 @@ const SearchResultsMap = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const postResult = await API.graphql(graphqlOperation(listPosts));
+        const postResult = await API.graphql(
+          graphqlOperation(listPosts, {
+            filter: {
+              maxGuests: { ge: guests },
+            },
+          })
+        );
         setPosts(postResult.data.listPosts.items);
       } catch (e) {
         console.log(e);
       }
     };
     fetchPosts();
-  });
+  }, []);
 
   useEffect(() => {
     if (!selectedPlaceId || !flatlist) return;
